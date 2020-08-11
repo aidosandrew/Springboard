@@ -114,13 +114,27 @@ FROM Bookings as b
 LEFT JOIN Facilities as f
     ON b.facid = f.facid
 LEFT JOIN Members as m
-    On b.memid = m.memid
+    ON b.memid = m.memid
 WHERE CAST(starttime as DATE) = '2012-09-14' AND
       CASE WHEN b.memid = 0 THEN slots * guestcost > 30
       ELSE slots * membercost > 30 END
 
 /* Q9: This time, produce the same result as in Q8, but using a subquery. */
 
+SELECT *
+FROM (
+  SELECT  f.name as facility_name,
+        CONCAT(firstname, ' ', surname) as member_name,
+        CASE WHEN b.memid = 0 THEN slots * guestcost
+        ELSE slots * membercost END AS booking_cost
+  FROM (  SELECT facid, memid, slots
+        FROM Bookings
+        WHERE CAST(starttime as DATE) = '2012-09-14') AS b
+  LEFT JOIN Facilities as f
+    ON b.facid = f.facid
+  LEFT JOIN Members as m
+    ON b.memid = m.memid) as summary_table
+WHERE booking_cost > 30
 
 /* PART 2: SQLite
 
@@ -132,10 +146,16 @@ QUESTIONS:
 The output of facility name and total revenue, sorted by revenue. Remember
 that there's a different cost for guests and members! */
 
+See Jupyter Notebook Part 2
+
 /* Q11: Produce a report of members and who recommended them in alphabetic surname,firstname order */
 
+See Jupyter Notebook Part 2
 
 /* Q12: Find the facilities with their usage by member, but not guests */
 
+See Jupyter Notebook Part 2
 
 /* Q13: Find the facilities usage by month, but not guests */
+
+See Jupyter Notebook Part 2
