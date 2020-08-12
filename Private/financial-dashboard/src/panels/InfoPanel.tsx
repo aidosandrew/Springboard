@@ -17,7 +17,7 @@ export default function InfoPanel() {
     <div>
       {fundInfo && fundInfo.managers.map((item, idx) => (
         <div className="manager" key={idx}>
-          <img src={`/team/${item.firstName}${item.lastName}.png`}
+          <img src={`/team/${item.firstName}-${item.lastName}.jpg`}
             alt={item.firstName + ' ' + item.lastName} />
           <span className="manager-info">
             <h2>{item.firstName + ' ' + item.lastName}</h2>
@@ -27,6 +27,23 @@ export default function InfoPanel() {
       ))}
     </div>
   </PanelBarItem>
+
+  <PanelBarItem title={"Fund Details"}>
+    {fundInfo && fundInfo.quarters.map((quarter, idx) => (
+              <PanelBarItem title={quarter.title} key={idx}>
+                <ul className="fund-detail-list">
+                  {quarter.details.map((detail, index) => (
+                    <li key={index}>
+                      <span>{detail.name}:</span>
+                      <span>{detail.value}</span>
+                    </li>
+                  ))}
+                </ul>
+              </PanelBarItem>
+            ))}
+</PanelBarItem >
+
+
 </PanelBar>
   );
 }

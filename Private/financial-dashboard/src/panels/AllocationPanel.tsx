@@ -21,7 +21,7 @@ export default function AllocationPanel() {
 
   return (
     <Chart>
-  <ChartTitle text={"Asset Allocation"}></ChartTitle>
+  <ChartTitle text={"Asset Class Allocation"}></ChartTitle>
   <ChartSeries>
     <ChartSeriesItem type="donut" data={data}>
     <ChartSeriesLabels

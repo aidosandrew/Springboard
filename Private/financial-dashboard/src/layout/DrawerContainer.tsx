@@ -5,9 +5,9 @@ import { Drawer, DrawerContent } from "@progress/kendo-react-layout";
 import { DrawerSelectEvent } from "@progress/kendo-react-layout/dist/npm/drawer/interfaces/DrawerSelectEvent";
 
 const user = {
-  initials: "TV",
-  name: "TJ VanToll",
-  img: "https://pbs.twimg.com/profile_images/1029805644310827008/wkAPO_XC_400x400.jpg"
+  initials: "AV",
+  name: "Andrew Vo",
+  img: "https://static.wixstatic.com/media/d370a9_21e7c2e87002475d9edb0bd6c826f14d~mv2.png"
 };
 
 const items =[
@@ -52,9 +52,9 @@ export default function DrawerContainer(props: React.PropsWithChildren<any>) {
               <span>
                 <Button icon="menu" look="flat" onClick={toggleDrawer} />
                 <span className="title">
-                  ACME Stocks
+                  BlackRock
                   <span className="divider">|</span>
-                  <span className="fund">Tech Fund</span>
+                  <span className="fund">Global Allocation Fund (MALOX)</span>
                 </span>
               </span>
               <img alt={user.name} src={user.img} />

@@ -1,6 +1,8 @@
 import React from "react";
 import {
   Chart,
+  ChartValueAxis,
+  ChartValueAxisItem,
   ChartSeries,
   ChartSeriesItem,
   ChartCategoryAxis,
@@ -20,10 +22,24 @@ export default function PerformancePanel() {
 
   return (
     <Chart>
-      <ChartTitle text="Fund Performance" />
+      <ChartTitle text="Fund Performance: Growth of Hypothetical $10,000" />
       <ChartCategoryAxis>
-        <ChartCategoryAxisItem categories={["2014", "2015", "2016", "2017", "2018", "2019", "2020"]} />
+        <ChartCategoryAxisItem categories={["Jul-10",
+                                            "Jul-11",
+                                            "Jul-12",
+                                            "Jul-13",
+                                            "Jul-14",
+                                            "Jul-15",
+                                            "Jul-16",
+                                            "Jul-17",
+                                            "Jul-18",
+                                            "Jul-19",
+                                            "Jul-20"
+                                            ]} />
       </ChartCategoryAxis>
+      <ChartValueAxis>
+            <ChartValueAxisItem min={7500} max={20000} majorUnit={2500} />
+        </ChartValueAxis>
       <ChartSeries>
         <ChartSeriesItem type="line" data={data} />
       </ChartSeries>
