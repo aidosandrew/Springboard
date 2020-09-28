@@ -1,7 +1,7 @@
 # Data Files
 Private/Image-Caption-Generator/train_val_data
 Private/Predict-Customer-Churn/data
-Submissions/CapstoneTwo/data/popularity_export
+Submissions/CapstoneTwo/data/raw_export
 
 # Compiled source #
 ###################
